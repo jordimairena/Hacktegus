@@ -25,3 +25,4 @@ proguard/
 
 # Log Files
 *.log
+/A donde comemos/nbproject/private/

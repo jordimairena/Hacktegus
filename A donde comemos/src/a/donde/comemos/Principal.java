@@ -27,21 +27,299 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLayeredPane1 = new javax.swing.JLayeredPane();
+        jP_principal = new javax.swing.JPanel();
+        jL_nombreApp = new javax.swing.JLabel();
+        jB_principal_filtroComida = new javax.swing.JButton();
+        jB_principal_filtroDinero = new javax.swing.JButton();
+        jB_principal_filtroUbicacion = new javax.swing.JButton();
+        jB_principal_filtroSugerencias = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jL_principal_buscarComida = new javax.swing.JLabel();
+        jL_principal_buscarPrecio = new javax.swing.JLabel();
+        jL_principal_buscarDistancia = new javax.swing.JLabel();
+        jB_principal_Buscar = new javax.swing.JButton();
+        jP_sugerencias = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jButton1 = new javax.swing.JButton();
+        jP_ubicacion = new javax.swing.JPanel();
+        jP_comida = new javax.swing.JPanel();
+        jP_dinero = new javax.swing.JPanel();
+        jP_resultados = new javax.swing.JPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 153, 0));
+        setResizable(false);
+
+        jP_principal.setBackground(new java.awt.Color(0, 153, 0));
+        jP_principal.setForeground(new java.awt.Color(0, 102, 0));
+        jP_principal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jL_nombreApp.setFont(new java.awt.Font("Hollywood Capital", 1, 36)); // NOI18N
+        jL_nombreApp.setForeground(new java.awt.Color(255, 153, 0));
+        jL_nombreApp.setText("¿A DONDE COMEMOS?");
+        jP_principal.add(jL_nombreApp, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
+
+        jB_principal_filtroComida.setBackground(new java.awt.Color(255, 255, 153));
+        jB_principal_filtroComida.setText("COMIDA");
+        jB_principal_filtroComida.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_principal_filtroComidaMouseClicked(evt);
+            }
+        });
+        jP_principal.add(jB_principal_filtroComida, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 85, 145, 135));
+
+        jB_principal_filtroDinero.setText("DINERO");
+        jB_principal_filtroDinero.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_principal_filtroDineroMouseClicked(evt);
+            }
+        });
+        jP_principal.add(jB_principal_filtroDinero, new org.netbeans.lib.awtextra.AbsoluteConstraints(157, 85, 144, 135));
+
+        jB_principal_filtroUbicacion.setText("UBICACION");
+        jB_principal_filtroUbicacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_principal_filtroUbicacionMouseClicked(evt);
+            }
+        });
+        jP_principal.add(jB_principal_filtroUbicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 226, 145, 137));
+
+        jB_principal_filtroSugerencias.setText("SUGERENCIAS");
+        jB_principal_filtroSugerencias.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_principal_filtroSugerenciasMouseClicked(evt);
+            }
+        });
+        jP_principal.add(jB_principal_filtroSugerencias, new org.netbeans.lib.awtextra.AbsoluteConstraints(157, 226, 144, 137));
+
+        jLabel2.setFont(new java.awt.Font("Hollywood Capital", 0, 20)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 153));
+        jLabel2.setText("FILTROS");
+        jP_principal.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(127, 55, -1, -1));
+
+        jL_principal_buscarComida.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jL_principal_buscarComida.setText("BUSCAR: Cualquier Comida");
+        jP_principal.add(jL_principal_buscarComida, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 270, 20));
+
+        jL_principal_buscarPrecio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jL_principal_buscarPrecio.setText("POR: Lps 100");
+        jP_principal.add(jL_principal_buscarPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 270, -1));
+
+        jL_principal_buscarDistancia.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jL_principal_buscarDistancia.setText("A: 1 km");
+        jP_principal.add(jL_principal_buscarDistancia, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 440, 260, -1));
+
+        jB_principal_Buscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_principal_BuscarMouseClicked(evt);
+            }
+        });
+        jP_principal.add(jB_principal_Buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 369, 295, 103));
+
+        jP_sugerencias.setBackground(new java.awt.Color(204, 0, 0));
+        jP_sugerencias.setForeground(new java.awt.Color(204, 0, 0));
+
+        jLabel1.setFont(new java.awt.Font("Hollywood Capital", 0, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("SUGERENCIAS");
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jButton1.setText("jButton1");
+
+        javax.swing.GroupLayout jP_sugerenciasLayout = new javax.swing.GroupLayout(jP_sugerencias);
+        jP_sugerencias.setLayout(jP_sugerenciasLayout);
+        jP_sugerenciasLayout.setHorizontalGroup(
+            jP_sugerenciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jP_sugerenciasLayout.createSequentialGroup()
+                .addGroup(jP_sugerenciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jP_sugerenciasLayout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jP_sugerenciasLayout.createSequentialGroup()
+                        .addGap(90, 90, 90)
+                        .addComponent(jButton1)))
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+        jP_sugerenciasLayout.setVerticalGroup(
+            jP_sugerenciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jP_sugerenciasLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65))
+        );
+
+        jP_ubicacion.setBackground(new java.awt.Color(0, 0, 204));
+        jP_ubicacion.setForeground(new java.awt.Color(0, 0, 204));
+
+        javax.swing.GroupLayout jP_ubicacionLayout = new javax.swing.GroupLayout(jP_ubicacion);
+        jP_ubicacion.setLayout(jP_ubicacionLayout);
+        jP_ubicacionLayout.setHorizontalGroup(
+            jP_ubicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 313, Short.MAX_VALUE)
+        );
+        jP_ubicacionLayout.setVerticalGroup(
+            jP_ubicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 483, Short.MAX_VALUE)
+        );
+
+        jP_comida.setBackground(new java.awt.Color(255, 153, 51));
+        jP_comida.setForeground(new java.awt.Color(255, 153, 51));
+
+        javax.swing.GroupLayout jP_comidaLayout = new javax.swing.GroupLayout(jP_comida);
+        jP_comida.setLayout(jP_comidaLayout);
+        jP_comidaLayout.setHorizontalGroup(
+            jP_comidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 313, Short.MAX_VALUE)
+        );
+        jP_comidaLayout.setVerticalGroup(
+            jP_comidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 483, Short.MAX_VALUE)
+        );
+
+        jP_dinero.setBackground(new java.awt.Color(255, 204, 0));
+        jP_dinero.setForeground(new java.awt.Color(255, 204, 0));
+
+        javax.swing.GroupLayout jP_dineroLayout = new javax.swing.GroupLayout(jP_dinero);
+        jP_dinero.setLayout(jP_dineroLayout);
+        jP_dineroLayout.setHorizontalGroup(
+            jP_dineroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 313, Short.MAX_VALUE)
+        );
+        jP_dineroLayout.setVerticalGroup(
+            jP_dineroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 483, Short.MAX_VALUE)
+        );
+
+        jP_resultados.setBackground(new java.awt.Color(0, 153, 153));
+        jP_resultados.setForeground(new java.awt.Color(0, 153, 153));
+
+        javax.swing.GroupLayout jP_resultadosLayout = new javax.swing.GroupLayout(jP_resultados);
+        jP_resultados.setLayout(jP_resultadosLayout);
+        jP_resultadosLayout.setHorizontalGroup(
+            jP_resultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 313, Short.MAX_VALUE)
+        );
+        jP_resultadosLayout.setVerticalGroup(
+            jP_resultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 483, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
+        jLayeredPane1.setLayout(jLayeredPane1Layout);
+        jLayeredPane1Layout.setHorizontalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jP_comida, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jP_principal, javax.swing.GroupLayout.DEFAULT_SIZE, 313, Short.MAX_VALUE))
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jP_ubicacion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jP_dinero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jP_sugerencias, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jP_resultados, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jLayeredPane1Layout.setVerticalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jP_comida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jP_principal, javax.swing.GroupLayout.DEFAULT_SIZE, 483, Short.MAX_VALUE))
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jP_ubicacion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jP_dinero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jP_sugerencias, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jP_resultados, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jLayeredPane1.setLayer(jP_principal, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jP_sugerencias, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jP_ubicacion, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jP_comida, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jP_dinero, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jP_resultados, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jB_principal_filtroComidaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_principal_filtroComidaMouseClicked
+        jP_principal.setVisible(false);
+        jP_sugerencias.setVisible(false);
+        jP_ubicacion.setVisible(false);
+        jP_comida.setVisible(true);
+        jP_dinero.setVisible(false);
+        jP_resultados.setVisible(false);
+    }//GEN-LAST:event_jB_principal_filtroComidaMouseClicked
+
+    private void jB_principal_filtroSugerenciasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_principal_filtroSugerenciasMouseClicked
+        jP_principal.setVisible(false);
+        jP_sugerencias.setVisible(true);
+        jP_ubicacion.setVisible(false);
+        jP_comida.setVisible(false);
+        jP_dinero.setVisible(false);
+        jP_resultados.setVisible(false);
+    }//GEN-LAST:event_jB_principal_filtroSugerenciasMouseClicked
+
+    private void jB_principal_filtroDineroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_principal_filtroDineroMouseClicked
+        // TODO add your handling code here:
+        jP_principal.setVisible(false);
+        jP_sugerencias.setVisible(false);
+        jP_ubicacion.setVisible(false);
+        jP_comida.setVisible(false);
+        jP_dinero.setVisible(true);
+        jP_resultados.setVisible(false);
+    }//GEN-LAST:event_jB_principal_filtroDineroMouseClicked
+
+    private void jB_principal_filtroUbicacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_principal_filtroUbicacionMouseClicked
+        // TODO add your handling code here:
+        jP_principal.setVisible(false);
+        jP_sugerencias.setVisible(false);
+        jP_ubicacion.setVisible(true);
+        jP_comida.setVisible(false);
+        jP_dinero.setVisible(false);
+        jP_resultados.setVisible(false);
+    }//GEN-LAST:event_jB_principal_filtroUbicacionMouseClicked
+
+    private void jB_principal_BuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_principal_BuscarMouseClicked
+        // TODO add your handling code here:
+        jP_principal.setVisible(false);
+        jP_sugerencias.setVisible(false);
+        jP_ubicacion.setVisible(false);
+        jP_comida.setVisible(false);
+        jP_dinero.setVisible(false);
+        jP_resultados.setVisible(true);
+    }//GEN-LAST:event_jB_principal_BuscarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -79,5 +357,26 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jB_principal_Buscar;
+    private javax.swing.JButton jB_principal_filtroComida;
+    private javax.swing.JButton jB_principal_filtroDinero;
+    private javax.swing.JButton jB_principal_filtroSugerencias;
+    private javax.swing.JButton jB_principal_filtroUbicacion;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jL_nombreApp;
+    private javax.swing.JLabel jL_principal_buscarComida;
+    private javax.swing.JLabel jL_principal_buscarDistancia;
+    private javax.swing.JLabel jL_principal_buscarPrecio;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLayeredPane jLayeredPane1;
+    private javax.swing.JPanel jP_comida;
+    private javax.swing.JPanel jP_dinero;
+    private javax.swing.JPanel jP_principal;
+    private javax.swing.JPanel jP_resultados;
+    private javax.swing.JPanel jP_sugerencias;
+    private javax.swing.JPanel jP_ubicacion;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }

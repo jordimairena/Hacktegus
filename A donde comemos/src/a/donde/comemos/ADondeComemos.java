@@ -17,6 +17,11 @@ public class ADondeComemos {
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.println("HOLA");
+        Principal p = new Principal();
+        p.pack();
+        //p.setLocationRelativeTo(null);
+        p.setVisible(true);
+        
     }
     
 }
