@@ -16,6 +16,8 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
+        Dba db = new Dba("C:\\Users\\jordi\\Desktop\\Hacktegus\\Hacktegus\\A donde comemos\\Base de Datos de Restaurantes.accdb");
+        db.conectar();
     }
 
     /**
