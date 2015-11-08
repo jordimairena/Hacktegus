@@ -100,7 +100,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Hollywood Capital", 0, 20)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 153));
         jLabel2.setText("FILTROS");
-        jP_principal.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(127, 55, -1, -1));
+        jP_principal.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, -1, -1));
 
         jL_principal_buscarComida.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jL_principal_buscarComida.setText("BUSCAR: Cualquier Comida");
@@ -224,7 +224,7 @@ public class Principal extends javax.swing.JFrame {
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jP_comida, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jP_principal, javax.swing.GroupLayout.DEFAULT_SIZE, 313, Short.MAX_VALUE))
+                .addComponent(jP_principal, javax.swing.GroupLayout.PREFERRED_SIZE, 313, Short.MAX_VALUE))
             .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jP_ubicacion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
