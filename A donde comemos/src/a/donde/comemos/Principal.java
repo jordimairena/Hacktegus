@@ -5,10 +5,14 @@
  */
 package a.donde.comemos;
 
+
+import javax.swing.ImageIcon;
+
 import java.awt.Color;
 import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.*;
+
 
 /**
  *
@@ -328,7 +332,9 @@ public class Principal extends javax.swing.JFrame {
         jP_principal.add(jL_nombreApp, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
 
         jB_principal_filtroComida.setBackground(new java.awt.Color(255, 255, 153));
-        jB_principal_filtroComida.setText("COMIDA");
+        jB_principal_filtroComida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/a/donde/comemos/restaurant35.png"))); // NOI18N
+        jB_principal_filtroComida.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jB_principal_filtroComida.setContentAreaFilled(false);
         jB_principal_filtroComida.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jB_principal_filtroComidaMouseClicked(evt);
@@ -336,15 +342,22 @@ public class Principal extends javax.swing.JFrame {
         });
         jP_principal.add(jB_principal_filtroComida, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 85, 145, 135));
 
-        jB_principal_filtroDinero.setText("DINERO");
+        jB_principal_filtroDinero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/a/donde/comemos/money1321.png"))); // NOI18N
+        jB_principal_filtroDinero.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jB_principal_filtroDinero.setContentAreaFilled(false);
         jB_principal_filtroDinero.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jB_principal_filtroDineroMouseClicked(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jB_principal_filtroDineroMousePressed(evt);
+            }
         });
         jP_principal.add(jB_principal_filtroDinero, new org.netbeans.lib.awtextra.AbsoluteConstraints(157, 85, 144, 135));
 
-        jB_principal_filtroUbicacion.setText("UBICACION");
+        jB_principal_filtroUbicacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/a/donde/comemos/map-pointer2.png"))); // NOI18N
+        jB_principal_filtroUbicacion.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jB_principal_filtroUbicacion.setContentAreaFilled(false);
         jB_principal_filtroUbicacion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jB_principal_filtroUbicacionMouseClicked(evt);
@@ -352,7 +365,9 @@ public class Principal extends javax.swing.JFrame {
         });
         jP_principal.add(jB_principal_filtroUbicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 226, 145, 137));
 
-        jB_principal_filtroSugerencias.setText("SUGERENCIAS");
+        jB_principal_filtroSugerencias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/a/donde/comemos/mail87.png"))); // NOI18N
+        jB_principal_filtroSugerencias.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jB_principal_filtroSugerencias.setContentAreaFilled(false);
         jB_principal_filtroSugerencias.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jB_principal_filtroSugerenciasMouseClicked(evt);
@@ -390,7 +405,11 @@ public class Principal extends javax.swing.JFrame {
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jP_comida, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
+                .addComponent(jP_principal, javax.swing.GroupLayout.PREFERRED_SIZE, 313, Short.MAX_VALUE))
+=======
                 .addComponent(jP_principal, javax.swing.GroupLayout.DEFAULT_SIZE, 320, Short.MAX_VALUE))
+>>>>>>> 6929cc0aae2242c7f1ca7f1e209068ac708ea4ff
             .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jP_ubicacion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -496,6 +515,10 @@ public class Principal extends javax.swing.JFrame {
         jP_resultados.setVisible(true);
     }//GEN-LAST:event_jB_principal_BuscarMouseClicked
 
+
+    private void jB_principal_filtroDineroMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_principal_filtroDineroMousePressed
+        //jB_principal_filtroDinero.setIcon(new ImageIcon("./money132.png"));
+    }//GEN-LAST:event_jB_principal_filtroDineroMousePressed
     private void jB_sugerencias_enviarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_sugerencias_enviarMouseClicked
         // TODO add your handling code here:
         email e = new email();
