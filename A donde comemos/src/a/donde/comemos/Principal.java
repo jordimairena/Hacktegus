@@ -10,7 +10,7 @@ import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.*;
 
-/**
+/*
  *
  * @author jordi
  */
@@ -361,11 +361,8 @@ public class Principal extends javax.swing.JFrame {
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jP_comida, javax.swing.GroupLayout.DEFAULT_SIZE, 312, Short.MAX_VALUE)
             .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
-                .addComponent(jP_principal, javax.swing.GroupLayout.PREFERRED_SIZE, 313, Short.MAX_VALUE))
-=======
-                .addComponent(jP_principal, javax.swing.GroupLayout.DEFAULT_SIZE, 312, Short.MAX_VALUE))
->>>>>>> comida
+            .addComponent(jP_principal, javax.swing.GroupLayout.PREFERRED_SIZE, 313, Short.MAX_VALUE))
+            .addComponent(jP_principal, javax.swing.GroupLayout.DEFAULT_SIZE, 312, Short.MAX_VALUE))
             .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jP_ubicacion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
