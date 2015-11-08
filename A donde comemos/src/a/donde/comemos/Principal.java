@@ -24,8 +24,8 @@ public class Principal extends javax.swing.JFrame {
         jP_comida.setVisible(false);
         jP_dinero.setVisible(false);
         jP_resultados.setVisible(false);
-        Dba db = new Dba("C:\\Users\\jordi\\Desktop\\Hacktegus\\Hacktegus\\A donde comemos\\Base de Datos de Restaurantes.accdb");
-        db.conectar();
+        //Dba db = new Dba("C:\\Users\\jordi\\Desktop\\Hacktegus\\Hacktegus\\A donde comemos\\Base de Datos de Restaurantes.accdb");
+        //db.conectar();
     }
 
     /**
