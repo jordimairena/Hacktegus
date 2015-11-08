@@ -19,8 +19,8 @@ public class Principal extends javax.swing.JFrame {
     /**
      * Creates new form Principal
      */
-        private static String USER_NAME = "";  // GMail user name (just the part before "@gmail.com")
-    private static String PASSWORD = ""; // GMail password
+        private static String USER_NAME = "adondecomemosentegus@gmail.com";  // GMail user name (just the part before "@gmail.com")
+    private static String PASSWORD = "Hacktegus2015"; // GMail password
     private String RECIPIENT;
     
     public Principal() {
@@ -31,8 +31,8 @@ public class Principal extends javax.swing.JFrame {
         jP_comida.setVisible(false);
         jP_dinero.setVisible(false);
         jP_resultados.setVisible(false);
-        Dba db = new Dba("./Base de Datos de Restaurantes.accdb");
-        db.conectar();
+        //Dba db = new Dba("./Base de Datos de Restaurantes.accdb");
+        //db.conectar();
     }
 
     /**
@@ -420,13 +420,15 @@ public class Principal extends javax.swing.JFrame {
         }
         if(validacion){
             jTA_sugerencias_texto.setText("Gracias por su aporte, su sugerencia ha sido registrada");
-            RECIPIENT=jTF_sugerencias_correo.getText();
-        String from = USER_NAME;
-        String pass = PASSWORD;
-        String[] to = { RECIPIENT }; // list of recipient email addresses
-        String subject = "Sugerencias a donde comemos";
-        String body = "Su sugerencia fue aceptada";   
-        e.sendFromGMail(from, pass, to, subject, body);
+            RECIPIENT = jTF_sugerencias_correo.getText();
+            String from = USER_NAME;
+            String[] us = {from};
+            String pass = PASSWORD;
+            String[] to = {RECIPIENT}; // list of recipient email addresses
+            String subject = "Sugerencias a donde comemos";
+            String body = jTA_sugerencias_texto.getText() + "\n" + RECIPIENT;
+            e.sendFromGMail(from, pass, us, subject, body);
+            e.sendFromGMail(from, pass, to, subject, "Su sugerencia fue recibida");
         }
              
     }//GEN-LAST:event_jB_sugerencias_enviarMouseClicked
