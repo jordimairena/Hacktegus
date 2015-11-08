@@ -5,6 +5,8 @@
  */
 package a.donde.comemos;
 
+import java.awt.Color;
+
 /**
  *
  * @author jordi
@@ -16,6 +18,12 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
+        jP_principal.setVisible(true);
+        jP_sugerencias.setVisible(false);
+        jP_ubicacion.setVisible(false);
+        jP_comida.setVisible(false);
+        jP_dinero.setVisible(false);
+        jP_resultados.setVisible(false);
     }
 
     /**
@@ -42,8 +50,13 @@ public class Principal extends javax.swing.JFrame {
         jP_sugerencias = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
+        jTA_sugerencias_texto = new javax.swing.JTextArea();
+        jB_sugerencias_enviar = new javax.swing.JButton();
+        jB_sugerencias_retorno = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jTF_sugerencias_correo = new javax.swing.JTextField();
         jP_ubicacion = new javax.swing.JPanel();
         jP_comida = new javax.swing.JPanel();
         jP_dinero = new javax.swing.JPanel();
@@ -127,37 +140,99 @@ public class Principal extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("SUGERENCIAS");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        jTA_sugerencias_texto.setColumns(20);
+        jTA_sugerencias_texto.setFont(new java.awt.Font("Courier", 0, 13)); // NOI18N
+        jTA_sugerencias_texto.setForeground(new java.awt.Color(153, 153, 153));
+        jTA_sugerencias_texto.setLineWrap(true);
+        jTA_sugerencias_texto.setRows(5);
+        jTA_sugerencias_texto.setText("Sugerencia");
+        jTA_sugerencias_texto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTA_sugerencias_textoMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(jTA_sugerencias_texto);
 
-        jButton1.setText("jButton1");
+        jB_sugerencias_enviar.setText("Enviar");
+        jB_sugerencias_enviar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_sugerencias_enviarMouseClicked(evt);
+            }
+        });
+
+        jB_sugerencias_retorno.setText("Back");
+        jB_sugerencias_retorno.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_sugerencias_retornoMouseClicked(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Courier", 0, 14)); // NOI18N
+        jLabel3.setText("Si encontro un error o falta ");
+
+        jLabel4.setFont(new java.awt.Font("Courier", 0, 14)); // NOI18N
+        jLabel4.setText("informacion, indiquelo abajo");
+
+        jLabel5.setFont(new java.awt.Font("Courier", 0, 13)); // NOI18N
+        jLabel5.setText("Su correo:");
+
+        jTF_sugerencias_correo.setFont(new java.awt.Font("Courier", 0, 13)); // NOI18N
+        jTF_sugerencias_correo.setForeground(new java.awt.Color(153, 153, 153));
+        jTF_sugerencias_correo.setText("alguien@correo.com");
+        jTF_sugerencias_correo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTF_sugerencias_correoMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jP_sugerenciasLayout = new javax.swing.GroupLayout(jP_sugerencias);
         jP_sugerencias.setLayout(jP_sugerenciasLayout);
         jP_sugerenciasLayout.setHorizontalGroup(
             jP_sugerenciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jP_sugerenciasLayout.createSequentialGroup()
+                .addGap(0, 17, Short.MAX_VALUE)
+                .addGroup(jP_sugerenciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jP_sugerenciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jScrollPane1)
+                        .addComponent(jTF_sugerencias_correo, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jP_sugerenciasLayout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addGroup(jP_sugerenciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel3)))
+                    .addComponent(jLabel5))
+                .addGap(14, 14, 14))
             .addGroup(jP_sugerenciasLayout.createSequentialGroup()
                 .addGroup(jP_sugerenciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jP_sugerenciasLayout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap()
+                        .addComponent(jB_sugerencias_retorno, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jP_sugerenciasLayout.createSequentialGroup()
-                        .addGap(90, 90, 90)
-                        .addComponent(jButton1)))
-                .addContainerGap(15, Short.MAX_VALUE))
+                        .addGap(101, 101, 101)
+                        .addComponent(jB_sugerencias_enviar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jP_sugerenciasLayout.setVerticalGroup(
             jP_sugerenciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jP_sugerenciasLayout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65))
+                .addContainerGap()
+                .addComponent(jB_sugerencias_retorno, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel3)
+                .addGap(10, 10, 10)
+                .addComponent(jLabel4)
+                .addGap(21, 21, 21)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTF_sugerencias_correo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jB_sugerencias_enviar, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
+                .addGap(10, 10, 10))
         );
 
         jP_ubicacion.setBackground(new java.awt.Color(0, 0, 204));
@@ -289,6 +364,10 @@ public class Principal extends javax.swing.JFrame {
         jP_comida.setVisible(false);
         jP_dinero.setVisible(false);
         jP_resultados.setVisible(false);
+        jTF_sugerencias_correo.setForeground(new Color(153,153,153));
+        jTA_sugerencias_texto.setForeground(new Color(153,153,153));
+        jTA_sugerencias_texto.setText("Sugerencia");
+        jTF_sugerencias_correo.setText("alguien@correo.com");
     }//GEN-LAST:event_jB_principal_filtroSugerenciasMouseClicked
 
     private void jB_principal_filtroDineroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_principal_filtroDineroMouseClicked
@@ -320,6 +399,42 @@ public class Principal extends javax.swing.JFrame {
         jP_dinero.setVisible(false);
         jP_resultados.setVisible(true);
     }//GEN-LAST:event_jB_principal_BuscarMouseClicked
+
+    private void jB_sugerencias_enviarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_sugerencias_enviarMouseClicked
+        // TODO add your handling code here:
+        boolean validacion = false;
+        if(!jTA_sugerencias_texto.getText().equals("Sugerencia") && !jTF_sugerencias_correo.getText().equals("alguien@correo.com")){
+            if(!jTF_sugerencias_correo.getText().isEmpty() && !jTA_sugerencias_texto.getText().isEmpty()){
+                validacion = true;
+            } 
+        }
+        if(validacion){
+            jTA_sugerencias_texto.setText("Gracias por su aporte, su sugerencia ha sido registrada");
+        }
+             
+    }//GEN-LAST:event_jB_sugerencias_enviarMouseClicked
+
+    private void jB_sugerencias_retornoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_sugerencias_retornoMouseClicked
+        // TODO add your handling code here:
+        jP_principal.setVisible(true);
+        jP_sugerencias.setVisible(false);
+        jP_ubicacion.setVisible(false);
+        jP_comida.setVisible(false);
+        jP_dinero.setVisible(false);
+        jP_resultados.setVisible(false);
+    }//GEN-LAST:event_jB_sugerencias_retornoMouseClicked
+
+    private void jTF_sugerencias_correoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTF_sugerencias_correoMouseClicked
+        // TODO add your handling code here:
+        jTF_sugerencias_correo.setText("");
+        jTF_sugerencias_correo.setForeground(Color.black);
+    }//GEN-LAST:event_jTF_sugerencias_correoMouseClicked
+
+    private void jTA_sugerencias_textoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTA_sugerencias_textoMouseClicked
+        // TODO add your handling code here:
+        jTA_sugerencias_texto.setText("");
+        jTA_sugerencias_texto.setForeground(Color.black);
+    }//GEN-LAST:event_jTA_sugerencias_textoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -362,13 +477,17 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jB_principal_filtroDinero;
     private javax.swing.JButton jB_principal_filtroSugerencias;
     private javax.swing.JButton jB_principal_filtroUbicacion;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jB_sugerencias_enviar;
+    private javax.swing.JButton jB_sugerencias_retorno;
     private javax.swing.JLabel jL_nombreApp;
     private javax.swing.JLabel jL_principal_buscarComida;
     private javax.swing.JLabel jL_principal_buscarDistancia;
     private javax.swing.JLabel jL_principal_buscarPrecio;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jP_comida;
     private javax.swing.JPanel jP_dinero;
@@ -377,6 +496,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jP_sugerencias;
     private javax.swing.JPanel jP_ubicacion;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTA_sugerencias_texto;
+    private javax.swing.JTextField jTF_sugerencias_correo;
     // End of variables declaration//GEN-END:variables
 }
