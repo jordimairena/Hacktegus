@@ -19,10 +19,10 @@ public class Principal extends javax.swing.JFrame {
     /**
      * Creates new form Principal
      */
-        private static String USER_NAME = "";  // GMail user name (just the part before "@gmail.com")
-    private static String PASSWORD = ""; // GMail password
+    private static String USER_NAME = "adondecomemosentegus@gmail.com";  // GMail user name (just the part before "@gmail.com")
+    private static String PASSWORD = "Hacktegus2015"; // GMail password
     private String RECIPIENT;
-    
+
     public Principal() {
         initComponents();
         jP_principal.setVisible(true);
@@ -373,8 +373,8 @@ public class Principal extends javax.swing.JFrame {
         jP_comida.setVisible(false);
         jP_dinero.setVisible(false);
         jP_resultados.setVisible(false);
-        jTF_sugerencias_correo.setForeground(new Color(153,153,153));
-        jTA_sugerencias_texto.setForeground(new Color(153,153,153));
+        jTF_sugerencias_correo.setForeground(new Color(153, 153, 153));
+        jTA_sugerencias_texto.setForeground(new Color(153, 153, 153));
         jTA_sugerencias_texto.setText("Sugerencia");
         jTF_sugerencias_correo.setText("alguien@correo.com");
     }//GEN-LAST:event_jB_principal_filtroSugerenciasMouseClicked
@@ -411,24 +411,28 @@ public class Principal extends javax.swing.JFrame {
 
     private void jB_sugerencias_enviarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_sugerencias_enviarMouseClicked
         // TODO add your handling code here:
-        email e= new email();
+        email e = new email();
         boolean validacion = false;
-        if(!jTA_sugerencias_texto.getText().equals("Sugerencia") && !jTF_sugerencias_correo.getText().equals("alguien@correo.com")){
-            if(!jTF_sugerencias_correo.getText().isEmpty() && !jTA_sugerencias_texto.getText().isEmpty()){
+        if (!jTA_sugerencias_texto.getText().equals("Sugerencia") && !jTF_sugerencias_correo.getText().equals("alguien@correo.com")) {
+            if (!jTF_sugerencias_correo.getText().isEmpty() && !jTA_sugerencias_texto.getText().isEmpty()) {
                 validacion = true;
-            } 
+            }
         }
-        if(validacion){
-            jTA_sugerencias_texto.setText("Gracias por su aporte, su sugerencia ha sido registrada");
-            RECIPIENT=jTF_sugerencias_correo.getText();
+
+        RECIPIENT = jTF_sugerencias_correo.getText();
         String from = USER_NAME;
+        String[] us = {from};
         String pass = PASSWORD;
-        String[] to = { RECIPIENT }; // list of recipient email addresses
+        String[] to = {RECIPIENT}; // list of recipient email addresses
         String subject = "Sugerencias a donde comemos";
-        String body = "Su sugerencia fue aceptada";   
-        e.sendFromGMail(from, pass, to, subject, body);
+        String body = jTA_sugerencias_texto.getText()+ "\n" +RECIPIENT;
+        e.sendFromGMail(from, pass,us , subject, body);
+        
+        if (validacion) {
+            jTA_sugerencias_texto.setText("Gracias por su aporte, su sugerencia ha sido registrada");
+            e.sendFromGMail(from, pass, to, "Sugerencia", jTA_sugerencias_texto.getText());
         }
-             
+
     }//GEN-LAST:event_jB_sugerencias_enviarMouseClicked
 
     private void jB_sugerencias_retornoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_sugerencias_retornoMouseClicked
