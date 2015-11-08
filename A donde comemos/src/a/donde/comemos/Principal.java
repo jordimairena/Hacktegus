@@ -43,6 +43,11 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         jLayeredPane1 = new javax.swing.JLayeredPane();
+        jP_resultados = new javax.swing.JPanel();
+        jB_resultados_retorno = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jP_dinero = new javax.swing.JPanel();
         jB_dinero_retorno = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
@@ -52,8 +57,14 @@ public class Principal extends javax.swing.JFrame {
         jTF_dinero_valor = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jP_comida = new javax.swing.JPanel();
-        jP_resultados = new javax.swing.JPanel();
         jP_ubicacion = new javax.swing.JPanel();
+        jB_ubicacion_retorno = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jSlider1 = new javax.swing.JSlider();
+        jb_ubicacion_aceptar = new javax.swing.JButton();
         jP_sugerencias = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -79,6 +90,63 @@ public class Principal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 153, 0));
         setResizable(false);
+
+        jP_resultados.setBackground(new java.awt.Color(0, 153, 153));
+        jP_resultados.setForeground(new java.awt.Color(0, 153, 153));
+
+        jB_resultados_retorno.setText("back");
+        jB_resultados_retorno.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_resultados_retornoMouseClicked(evt);
+            }
+        });
+
+        jLabel13.setText("RESULTADOS");
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Restaurante", "Comida", "Precio", "Distancia"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(jTable1);
+
+        javax.swing.GroupLayout jP_resultadosLayout = new javax.swing.GroupLayout(jP_resultados);
+        jP_resultados.setLayout(jP_resultadosLayout);
+        jP_resultadosLayout.setHorizontalGroup(
+            jP_resultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jP_resultadosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jP_resultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(jP_resultadosLayout.createSequentialGroup()
+                        .addComponent(jB_resultados_retorno, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(52, 52, 52)
+                        .addComponent(jLabel13)
+                        .addGap(0, 117, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jP_resultadosLayout.setVerticalGroup(
+            jP_resultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jP_resultadosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jB_resultados_retorno, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel13)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(29, Short.MAX_VALUE))
+        );
 
         jP_dinero.setBackground(new java.awt.Color(255, 204, 0));
         jP_dinero.setForeground(new java.awt.Color(255, 204, 0));
@@ -184,32 +252,93 @@ public class Principal extends javax.swing.JFrame {
             .addGap(0, 489, Short.MAX_VALUE)
         );
 
-        jP_resultados.setBackground(new java.awt.Color(0, 153, 153));
-        jP_resultados.setForeground(new java.awt.Color(0, 153, 153));
-
-        javax.swing.GroupLayout jP_resultadosLayout = new javax.swing.GroupLayout(jP_resultados);
-        jP_resultados.setLayout(jP_resultadosLayout);
-        jP_resultadosLayout.setHorizontalGroup(
-            jP_resultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 320, Short.MAX_VALUE)
-        );
-        jP_resultadosLayout.setVerticalGroup(
-            jP_resultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 489, Short.MAX_VALUE)
-        );
-
         jP_ubicacion.setBackground(new java.awt.Color(0, 0, 204));
         jP_ubicacion.setForeground(new java.awt.Color(0, 0, 204));
+
+        jB_ubicacion_retorno.setText("back");
+        jB_ubicacion_retorno.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_ubicacion_retornoMouseClicked(evt);
+            }
+        });
+
+        jLabel9.setFont(new java.awt.Font("Lucida Grande", 0, 36)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("UBICACION");
+
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("SU UBICACION");
+
+        jLabel11.setText("imagen de posicion");
+        jLabel11.setOpaque(true);
+
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("RADIO MAXIMO (m):");
+
+        jSlider1.setFont(new java.awt.Font("Lucida Grande", 0, 8)); // NOI18N
+        jSlider1.setForeground(new java.awt.Color(255, 255, 255));
+        jSlider1.setMajorTickSpacing(200);
+        jSlider1.setMaximum(2000);
+        jSlider1.setMinimum(200);
+        jSlider1.setMinorTickSpacing(100);
+        jSlider1.setPaintLabels(true);
+        jSlider1.setPaintTicks(true);
+        jSlider1.setSnapToTicks(true);
+        jSlider1.setToolTipText("");
+
+        jb_ubicacion_aceptar.setText("ok");
+        jb_ubicacion_aceptar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_ubicacion_aceptarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jP_ubicacionLayout = new javax.swing.GroupLayout(jP_ubicacion);
         jP_ubicacion.setLayout(jP_ubicacionLayout);
         jP_ubicacionLayout.setHorizontalGroup(
             jP_ubicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 320, Short.MAX_VALUE)
+            .addGroup(jP_ubicacionLayout.createSequentialGroup()
+                .addGroup(jP_ubicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jP_ubicacionLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jB_ubicacion_retorno, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jP_ubicacionLayout.createSequentialGroup()
+                        .addGap(62, 62, 62)
+                        .addComponent(jLabel9))
+                    .addGroup(jP_ubicacionLayout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jP_ubicacionLayout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(jP_ubicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel10)))
+                    .addGroup(jP_ubicacionLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jP_ubicacionLayout.createSequentialGroup()
+                        .addGap(101, 101, 101)
+                        .addComponent(jb_ubicacion_aceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
         jP_ubicacionLayout.setVerticalGroup(
             jP_ubicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 489, Short.MAX_VALUE)
+            .addGroup(jP_ubicacionLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jB_ubicacion_retorno, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel9)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jb_ubicacion_aceptar, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
+                .addGap(21, 21, 21))
         );
 
         jP_sugerencias.setBackground(new java.awt.Color(204, 0, 0));
@@ -411,9 +540,9 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jP_resultados, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+        jLayeredPane1.setLayer(jP_resultados, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jP_dinero, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jP_comida, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jP_resultados, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jP_ubicacion, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jP_sugerencias, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jP_principal, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -564,6 +693,36 @@ public class Principal extends javax.swing.JFrame {
        jTF_dinero_valor.setText(Integer.toString(jS_dinero_maximo.getValue()));
     }//GEN-LAST:event_jS_dinero_maximoStateChanged
 
+    private void jB_ubicacion_retornoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_ubicacion_retornoMouseClicked
+        // TODO add your handling code here:
+        jP_principal.setVisible(true);
+        jP_sugerencias.setVisible(false);
+        jP_ubicacion.setVisible(false);
+        jP_comida.setVisible(false);
+        jP_dinero.setVisible(false);
+        jP_resultados.setVisible(false);
+    }//GEN-LAST:event_jB_ubicacion_retornoMouseClicked
+
+    private void jb_ubicacion_aceptarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_ubicacion_aceptarMouseClicked
+        // TODO add your handling code here:
+        jP_principal.setVisible(true);
+        jP_sugerencias.setVisible(false);
+        jP_ubicacion.setVisible(false);
+        jP_comida.setVisible(false);
+        jP_dinero.setVisible(false);
+        jP_resultados.setVisible(false);
+    }//GEN-LAST:event_jb_ubicacion_aceptarMouseClicked
+
+    private void jB_resultados_retornoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_resultados_retornoMouseClicked
+        // TODO add your handling code here:
+        jP_principal.setVisible(true);
+        jP_sugerencias.setVisible(false);
+        jP_ubicacion.setVisible(false);
+        jP_comida.setVisible(false);
+        jP_dinero.setVisible(false);
+        jP_resultados.setVisible(false);
+    }//GEN-LAST:event_jB_resultados_retornoMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -607,13 +766,19 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jB_principal_filtroDinero;
     private javax.swing.JButton jB_principal_filtroSugerencias;
     private javax.swing.JButton jB_principal_filtroUbicacion;
+    private javax.swing.JButton jB_resultados_retorno;
     private javax.swing.JButton jB_sugerencias_enviar;
     private javax.swing.JButton jB_sugerencias_retorno;
+    private javax.swing.JButton jB_ubicacion_retorno;
     private javax.swing.JLabel jL_nombreApp;
     private javax.swing.JLabel jL_principal_buscarComida;
     private javax.swing.JLabel jL_principal_buscarDistancia;
     private javax.swing.JLabel jL_principal_buscarPrecio;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -621,6 +786,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jP_comida;
     private javax.swing.JPanel jP_dinero;
@@ -630,8 +796,12 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jP_ubicacion;
     private javax.swing.JSlider jS_dinero_maximo;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JSlider jSlider1;
     private javax.swing.JTextArea jTA_sugerencias_texto;
     private javax.swing.JTextField jTF_dinero_valor;
     private javax.swing.JTextField jTF_sugerencias_correo;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JButton jb_ubicacion_aceptar;
     // End of variables declaration//GEN-END:variables
 }
