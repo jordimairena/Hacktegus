@@ -6,6 +6,9 @@
 package a.donde.comemos;
 
 import java.awt.Color;
+import java.util.*;
+import javax.mail.*;
+import javax.mail.internet.*;
 
 /**
  *
@@ -16,6 +19,10 @@ public class Principal extends javax.swing.JFrame {
     /**
      * Creates new form Principal
      */
+        private static String USER_NAME = "";  // GMail user name (just the part before "@gmail.com")
+    private static String PASSWORD = ""; // GMail password
+    private String RECIPIENT;
+    
     public Principal() {
         initComponents();
         jP_principal.setVisible(true);
@@ -24,7 +31,7 @@ public class Principal extends javax.swing.JFrame {
         jP_comida.setVisible(false);
         jP_dinero.setVisible(false);
         jP_resultados.setVisible(false);
-        Dba db = new Dba("C:\\Users\\jordi\\Desktop\\Hacktegus\\Hacktegus\\A donde comemos\\Base de Datos de Restaurantes.accdb");
+        Dba db = new Dba("./Base de Datos de Restaurantes.accdb");
         db.conectar();
     }
 
@@ -404,6 +411,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void jB_sugerencias_enviarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_sugerencias_enviarMouseClicked
         // TODO add your handling code here:
+        email e= new email();
         boolean validacion = false;
         if(!jTA_sugerencias_texto.getText().equals("Sugerencia") && !jTF_sugerencias_correo.getText().equals("alguien@correo.com")){
             if(!jTF_sugerencias_correo.getText().isEmpty() && !jTA_sugerencias_texto.getText().isEmpty()){
@@ -412,6 +420,13 @@ public class Principal extends javax.swing.JFrame {
         }
         if(validacion){
             jTA_sugerencias_texto.setText("Gracias por su aporte, su sugerencia ha sido registrada");
+            RECIPIENT=jTF_sugerencias_correo.getText();
+        String from = USER_NAME;
+        String pass = PASSWORD;
+        String[] to = { RECIPIENT }; // list of recipient email addresses
+        String subject = "Sugerencias a donde comemos";
+        String body = "Su sugerencia fue aceptada";   
+        e.sendFromGMail(from, pass, to, subject, body);
         }
              
     }//GEN-LAST:event_jB_sugerencias_enviarMouseClicked
